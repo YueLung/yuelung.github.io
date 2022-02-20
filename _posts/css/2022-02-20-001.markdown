@@ -1,17 +1,17 @@
 ---
 layout: post
-title: \[CSS\] 將元素置中於一個容器裡
+title: [CSS] 將元素置中於一個容器裡
 date: 2022-02-20 15:40:23 +0800
 category: CSS
 ---
 方法1: 使用flex
-```HTML
+```
 <div class="container methond-flex">
   <div class="item">
   </div>
 </div>
 ```
-```CSS
+```
 .container {
   position: relative;
   width: 200px;
@@ -36,16 +36,17 @@ result:
   <div style="width: 120px; height: 100px; background: blue;">
   </div>
 </div>
-
-
+   
+    
+   	
 方法2: 使用translate
-```HTML
+```
 <div class="container">
   <div class="item methond-translate">
   </div>
 </div>
 ```
-```CSS
+```
 .container {
   position: relative;
   width: 200px;
