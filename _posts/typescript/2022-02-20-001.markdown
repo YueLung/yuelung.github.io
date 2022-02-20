@@ -1,5 +1,5 @@
 ---
-layout: post-typescript
+layout: post
 title: Replace a value if null or undefined
 date: 2022-02-20 13:37:23 +0800
 category: Typescript
