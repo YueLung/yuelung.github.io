@@ -1,6 +1,6 @@
 ---
 layout: post
-title: |Typescript| Replace a value if null or undefined
+title: \[Typescript\] Replace a value if null or undefined
 date: 2022-02-20 13:37:23 +0800
 category: Typescript
 ---
