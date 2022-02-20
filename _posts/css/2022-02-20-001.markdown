@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CSS 將元素置中於一個容器裡
+title: |CSS| 將元素置中於一個容器裡
 date: 2022-02-20 15:40:23 +0800
 category: CSS
 ---
@@ -33,11 +33,11 @@ category: CSS
 ```
 result:
 <div style="position:relative; width:200px; height:200px; background:red; display: flex; justify-content: center; align-items: center;">
-  <div style="width: 120px; height: 100px; background: blue;">
+  <div style="width:120px; height:100px; background:blue;">
   </div>
 </div>
    
-    
+<br>    
    	
 方法2: 使用translate
 ```
@@ -67,5 +67,10 @@ result:
   transform: translate(-50%,-50%);
 }
 ```
+result:
+<div style="position:relative; width:200px; height:200px; background:red;">
+  <div style="width:120px; height:100px; background:blue; position:absolute; top:50%; left: 50%; transform:translate(-50%,-50%);">
+  </div>
+</div>
 
 
