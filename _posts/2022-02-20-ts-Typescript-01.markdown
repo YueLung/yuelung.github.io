@@ -1,0 +1,30 @@
+---
+layout: typescript
+title: Typescript: Replace a value if null or undefined
+date: 2022-02-20 12:51:23 +0800
+category: Typescript
+---
+# 給一個變數設定預設值的方法
+1.
+```javascript
+var i = null;
+var j = i || 10;
+// j now is 10
+```
+2.
+```javascript
+var i = null;
+var j = i ?? 10;
+// j now is 10
+```
+
+需要注意的是，如果i是false，2種方式會有不一樣的結果
+```javascript
+var i = false;
+var j = i || true;
+// j now is true
+
+var i = false;
+var j = i ?? true;
+// j now is false
+```

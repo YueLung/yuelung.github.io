@@ -1,6 +1,6 @@
 <div class="sidebar-item sidebar-header">
 	<div class='sidebar-brand'>
-		<a href="/about/">{{ site.title }}</a>
+		<a href="/">{{ site.title }}</a>
 	</div>
 	<p class="lead">{{ site.description }}</p>
 	{%- if social.github -%}
@@ -11,7 +11,7 @@
 	{%- endif -%}
 </div>
 
-<div class="sidebar-item sidebar-nav">
+<!--div class="sidebar-item sidebar-nav">
 	<ul class="nav">
       <li class="nav-title">Pages</li>
 	  <li>
@@ -30,11 +30,11 @@
 	    {% endif %}
 	  {% endfor %}
 	</ul>
-</div>
+</div!-->
 
 <div class="sidebar-item sidebar-nav">
   	<ul class="nav">
-			<li class="nav-title">Categories</li>
+			<li class="nav-title">目錄</li>
 	    {% for category in site.categories %}
 	    <li>
 	    	<a class="nav-item" href="{{ root_url }}/{{ site.category_dir }}#{{ category | first }}">
