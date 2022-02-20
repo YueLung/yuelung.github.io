@@ -1,7 +1,7 @@
 ---
-layout: typescript
+layout: post
 title: Typescript: Replace a value if null or undefined
-date: 2022-02-20 12:51:23 +0800
+date: 2022-02-20 13:37:23 +0800
 category: Typescript
 ---
 # 給一個變數設定預設值的方法
