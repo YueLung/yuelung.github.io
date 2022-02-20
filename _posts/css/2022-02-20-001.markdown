@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[' CSS ']'  將元素置中於一個容器裡
+title: CSS 將元素置中於一個容器裡
 date: 2022-02-20 15:40:23 +0800
 category: CSS
 ---
