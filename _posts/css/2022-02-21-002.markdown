@@ -34,14 +34,18 @@ category: CSS
 ```
 result:
 <style>
+	[class*='box'] > div{
+		border: 1px solid red;
+		margin: 0.5em;
+	}
 	.flex-box {
-	  display: flex;
-	  flex-wrap: wrap;
+		display: flex;
+		flex-wrap: wrap;
 	}
 
 	.flex-box > div {
-	  flex: 1 1 160px;
-	  --flex: 0 0 30%;
+		flex: 1 1 160px;
+		--flex: 0 0 30%;
 	}
 </style>
 <div class="flex-box">
@@ -80,6 +84,13 @@ result:
 }
 ```
 result:
+<style>
+	.grid-box {
+	  display: grid;
+	  grid-template-columns: repeat(auto-fill,minmax(160px, 1fr));
+	}
+</style>
+
 <div class="grid-box">
   <div>One</div>
   <div>Two</div>
