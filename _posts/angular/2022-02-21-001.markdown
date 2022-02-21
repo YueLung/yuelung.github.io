@@ -21,9 +21,9 @@ ng g c
 ng g c --flat
 ng g c --skip-import
 ```
+> <span>--flat 表示不新增資料夾</span>  
+> ---skip-import 不將此元件新增到其他NgModule  
 <br>
-> /--flat 表示不新增資料夾  
-> /--skip-import 不將此元件新增到其他NgModule  
 
 新增模組(module)
 ```
@@ -31,5 +31,5 @@ ng g m
 ng g c --flat
 ng g c --routing
 ```
-> /--routing 一起新增routing module
+> --routing 一起新增routing module
 
