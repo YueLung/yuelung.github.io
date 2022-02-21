@@ -1,0 +1,34 @@
+---
+layout: post
+title: 常用 CLI
+date: 2022-02-21 22:06:23 +0800
+category: Angular
+---
+建立一個新專案
+```
+ng new my-project
+```
+
+建置並啟動伺服器
+```
+ng serve
+ng serve --open  
+```      
+
+新增元件(component)
+```
+ng g c
+ng g c --flat
+ng g c --skip-import
+```
+> --flat 表示不新增資料夾
+> --skip-import 不將此元件新增到其他NgModule
+
+新增模組(module)
+```
+ng g m
+ng g c --flat
+ng g c --routing
+```
+> --routing 一起新增routing module
+
