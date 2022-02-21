@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 網狀排版
-date: 2022-02-21 15:40:23 +0800
+date: 2022-02-21 20:23:23 +0800
 category: CSS
 ---
 方法1: 使用flex
@@ -21,12 +21,10 @@ category: CSS
   border: 1px solid red;
   margin: 0.5em;
 }
-
 .flex-box {
   display: flex;
   flex-wrap: wrap;
 }
-
 .flex-box > div {
   flex: 1 1 160px;
   --flex: 0 0 30%;
@@ -77,7 +75,6 @@ result:
   border: 1px solid red;
   margin: 0.5em;
 }
-
 .grid-box {
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(160px, 1fr));

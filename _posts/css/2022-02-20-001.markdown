@@ -18,13 +18,11 @@ category: CSS
   height: 200px;
   background: red;
 }
-
 .item {
  width: 120px;
  height: 100px;
  background: blue;
 }
-
 .methond-flex {
   display: flex;
   justify-content: center;
@@ -32,8 +30,26 @@ category: CSS
 }
 ```
 result:
-<div style="position:relative; width:200px; height:200px; background:red; display: flex; justify-content: center; align-items: center;">
-  <div style="width:120px; height:100px; background:blue;">
+<style>
+	.container {
+	  position: relative;
+	  width: 200px;
+	  height: 200px;
+	  background: red;
+	}
+	.item {
+	 width: 120px;
+	 height: 100px;
+	 background: blue;
+	}
+	.methond-flex {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	}
+</style>
+<div class="container methond-flex">
+  <div class="item">
   </div>
 </div>
    
@@ -53,13 +69,11 @@ result:
   height: 200px;
   background: red;
 }
-
 .item {
  width: 120px;
  height: 100px;
  background: blue;
 }
-
 .methond-translate {
   position: absolute;
   top: 50%;
@@ -68,8 +82,16 @@ result:
 }
 ```
 result:
-<div style="position:relative; width:200px; height:200px; background:red;">
-  <div style="width:120px; height:100px; background:blue; position:absolute; top:50%; left: 50%; transform:translate(-50%,-50%);">
+<style>
+	.methond-translate {
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%,-50%);
+	}
+</style>
+<div class="container">
+  <div class="item methond-translate">
   </div>
 </div>
 
