@@ -31,13 +31,13 @@ category: CSS
 ```
 result:
 <style>
-	.container {
+	.container_ {
 	  position: relative;
 	  width: 200px;
 	  height: 200px;
 	  background: red;
 	}
-	.item {
+	.item_ {
 	 width: 120px;
 	 height: 100px;
 	 background: blue;
@@ -48,8 +48,8 @@ result:
 	  align-items: center;
 	}
 </style>
-<div class="container methond-flex">
-  <div class="item">
+<div class="container_ methond-flex">
+  <div class="item_">
   </div>
 </div>
    
@@ -90,8 +90,8 @@ result:
 	  transform: translate(-50%,-50%);
 	}
 </style>
-<div class="container">
-  <div class="item methond-translate">
+<div class="container_">
+  <div class="item_ methond-translate">
   </div>
 </div>
 
