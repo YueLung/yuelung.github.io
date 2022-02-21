@@ -18,7 +18,7 @@ ng serve --open
 新增元件(component)
 ```
 ng g c
-ng g c --flat		  表示不新增資料夾	
+ng g c --flat		表示不新增資料夾	
 ng g c --skip-import  不將此元件新增到其他NgModule 
 ```
 <br>
@@ -26,5 +26,5 @@ ng g c --skip-import  不將此元件新增到其他NgModule
 ```
 ng g m
 ng g c --flat
-ng g c --routing      一起新增routing module
+ng g c --routing      新增routing module
 ```
