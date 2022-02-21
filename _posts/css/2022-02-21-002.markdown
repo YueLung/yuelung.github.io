@@ -34,11 +34,6 @@ category: CSS
 ```
 result:
 <style>
-	[class*='box'] > div{
-	  border: 1px solid red;
-	  margin: 0.5em;
-	}
-
 	.flex-box {
 	  display: flex;
 	  flex-wrap: wrap;
@@ -48,7 +43,7 @@ result:
 	  flex: 1 1 160px;
 	  --flex: 0 0 30%;
 	}
-<style>
+</style>
 <div class="flex-box">
   <div>One</div>
   <div>Two</div>
