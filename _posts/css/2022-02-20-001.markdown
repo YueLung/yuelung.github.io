@@ -5,13 +5,13 @@ date: 2022-02-20 15:40:23 +0800
 category: CSS
 ---
 方法1: 使用flex
-```
+```html
 <div class="container methond-flex">
   <div class="item">
   </div>
 </div>
 ```
-```
+```css
 .container {
   position: relative;
   width: 200px;
@@ -56,13 +56,13 @@ result:
 <br>    
    	
 方法2: 使用translate
-```
+```hrml
 <div class="container">
   <div class="item methond-translate">
   </div>
 </div>
 ```
-```
+```css
 .container {
   position: relative;
   width: 200px;

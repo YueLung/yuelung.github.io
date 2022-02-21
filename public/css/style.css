@@ -104,6 +104,7 @@ code {
 
 .sidebar-item {
 	display: block;
+	position: fixed;
 }
 
 .sidebar ul {
