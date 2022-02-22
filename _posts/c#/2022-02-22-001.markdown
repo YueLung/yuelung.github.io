@@ -15,11 +15,11 @@ string msg = condition ? "im true" : "false";
 ```c#
 public class Student 
 { 
-	public string Name {get; set;} 
+    public string Name {get; set;} 
 }
 
 Student student= null;		
-Student tmp = student ?? new Student(){ Name = "james" };	
+Student tmp = student ?? new Student() { Name = "james" };	
 // tmp.Name is "james"
 ``` 
     
@@ -43,7 +43,7 @@ mapped.Name = Model.Model2?.Model3?.Model4?.Name ?? "N/A";
 ```c#
 public class Student
 {  
-	public void test() { } 
+    public void test() { } 
 }
 
 Student student= null;		
