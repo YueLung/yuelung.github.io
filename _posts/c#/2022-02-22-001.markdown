@@ -1,0 +1,75 @@
+---
+layout: post
+title: 多種問號用法
+date: 2022-02-22 15:40:23 +0800
+category: C#
+---
+### ? :
+```c#
+bool condition = true;		
+string msg = condition ? "im true" : "false";
+// msg is "123"
+``` 
+    
+### ??
+```c#
+public class Student 
+{ 
+	public string Name {get; set;} 
+}
+
+Student student= null;		
+Student tmp = student ?? new Student(){ Name = "james" };	
+// tmp.Name is "james"
+``` 
+    
+### ?.
+```c#
+if (Model.Model2 == null
+  || Model.Model2.Model3 == null
+  || Model.Model2.Model3.Model4 == null
+  || Model.Model2.Model3.Model4.Name == null)
+{
+  mapped.Name = "N/A"
+}
+else
+{
+  mapped.Name = Model.Model2.Model3.Model4.Name;
+}
+
+// 等同於下
+mapped.Name = Model.Model2?.Model3?.Model4?.Name ?? "N/A";
+``` 
+```c#
+public class Student
+{  
+	public void test() { } 
+}
+
+Student student= null;		
+student.test();
+// error: Object reference not set to an instance of an object.
+
+Student student= null;		
+student?.test();
+// nothing happen. 不會去call test() function
+```
+    
+### Nullable type的語法糖
+```c#
+int? x;
+Nullable<int> x;
+// 同樣意思
+```
+```c#
+int i1=1;     //ok
+int i2=null;  //not ok
+
+int? i3=1;    //ok
+int? i4=null; //ok
+```
+	
+
+
+
+

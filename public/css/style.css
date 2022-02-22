@@ -298,6 +298,11 @@ footer {
 	color: #ccc;
 }
 
+@media (min-width: 576px) {
+	._sidebar-container{
+		position: fixed;		
+	}
+}
 
 @media (max-width: 576px) {
 	article {
