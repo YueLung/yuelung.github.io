@@ -10,12 +10,12 @@ category: OOP
      
   
 ### 製作一個AI下棋，設計3種難度，未來可能要再增加
+<br>
 
 > 先設計一個角色介面
 
 ```c#
-public Interface IRole
-{
+public Interface IRole {
     void onMyTurn();
 }
 ```
@@ -24,23 +24,19 @@ public Interface IRole
 > 若以後需要增角色，只需要增加class，就不會動到原本的程式碼
 
 ```c#
-public class HumanPlayer : IRole
-{
+public class HumanPlayer : IRole {
     void onMyTurn() { // do something }
 }
 
-public class EasyAi : IRole
-{
+public class EasyAi : IRole {
     void onMyTurn(){ // some easy algorithm }
 }
 
-public class MediumAi : IRole
-{
+public class MediumAi : IRole {
     void onMyTurn(){ // some Medium algorithm }
 }
 
-public class HardAi : IRole
-{
+public class HardAi : IRole {
     void onMyTurn() { // some Hard algorithm }
 }
 ```
@@ -50,12 +46,9 @@ public class HardAi : IRole
 ```c#
 enum RoleType{ HumanPlayer, EasyAi, MediumAi, HardAi }
 
-public static class PlayerFactory
-{
-    public static IRole CreatePlayer(RoleType type)
-    {
-        switch (type)
-        {
+public static class PlayerFactory {
+    public static IRole CreatePlayer(RoleType type) {
+        switch (type) {
             case RoleType.HumanPlayer:
                 return new HumanPlayer();
                 break;
@@ -79,21 +72,18 @@ public static class PlayerFactory
 > 一個遊戲管理者，之後若有角色新增，都不應該動到這裡的程式碼
 
 ```c#
-public class GameMgr 
-{
+public class GameMgr  {
     private IRole role1;
     private IRole role2;
 	
-    public GameMgr(RoleType roleType1, RoleType roleType2)
-    {
+    public GameMgr(RoleType roleType1, RoleType roleType2) {
         role1 = PlayerFactory.CreatePlayer(roleType1);
         role2 = PlayerFactory.CreatePlayer(roleType2);
 		
         start();
     }
 	
-    private start()
-    {
+    private start() {
         role1.onMyTurn();
     }
 }
