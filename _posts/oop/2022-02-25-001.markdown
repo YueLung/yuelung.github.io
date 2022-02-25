@@ -5,12 +5,12 @@ date: 2022-02-25 22:02:23 +0800
 category: OOP
 ---
 ## 策略模式
-> 避免使用一堆if else.
-> 擴充容易.
+> - 避免使用一堆if else
+> - 擴充容易
    
    
 ### 情境: 製作一個AI下棋，設計3種難度，未來可能要再增加
-
+<br>
 先設計一個角色介面
 ```c#
 public Interface IRole
@@ -27,17 +27,17 @@ public class HumanPlayer : IRole
     void onMyTurn() { // do something }
 }
 
-public clas EasyAi : IRole
+public class EasyAi : IRole
 {
     void onMyTurn(){ // some easy algorithm }
 }
 
-public clas MediumAi : IRole
+public class MediumAi : IRole
 {
     void onMyTurn(){ // some Medium algorithm }
 }
 
-public clas HardAi : IRole
+public class HardAi : IRole
 {
     void onMyTurn() { // some Hard algorithm }
 }
