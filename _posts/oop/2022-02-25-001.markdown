@@ -12,6 +12,7 @@ category: OOP
 ### 製作一個AI下棋，設計3種難度，未來可能要再增加
 
 > 先設計一個角色介面
+
 ```c#
 public Interface IRole
 {
@@ -21,6 +22,7 @@ public Interface IRole
 
 > 新增需要的角色，並實作該角色action
 > 若以後需要增角色，只需要增加class，就不會動到原本的程式碼
+
 ```c#
 public class HumanPlayer : IRole
 {
@@ -42,7 +44,9 @@ public class HardAi : IRole
     void onMyTurn() { // some Hard algorithm }
 }
 ```
+
 > 建造一個角色工廠
+
 ```c#
 enum RoleType{ HumanPlayer, EasyAi, MediumAi, HardAi }
 
@@ -71,7 +75,9 @@ public static class PlayerFactory
     }
 }
 ```
+
 > 一個遊戲管理者，之後若有角色新增，都不應該動到這裡的程式碼
+
 ```c#
 public class GameMgr 
 {
