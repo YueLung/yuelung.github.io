@@ -26,9 +26,9 @@ promise1.then((value) => {
 console.log("test");
 
 // output
-test
+// test
 // after 1000ms
-true or false
+// true or false
 ```
 <br>
 串接promise，避免波動拳
@@ -52,9 +52,9 @@ new Promise((resolve, reject) => {
 
 // output
 // after 1000ms
-1
+// 1
 // after 1000ms
-2
+// 2
 ```
 
 
