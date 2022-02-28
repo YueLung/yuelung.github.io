@@ -1,6 +1,6 @@
 ---
 layout: post
-title: :host 、 ::ng-deep
+title: :host ::ng-deep
 date: 2022-02-28 21:51:23 +0800
 category: Angular
 ---
