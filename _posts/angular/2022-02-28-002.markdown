@@ -1,11 +1,12 @@
 ---
 layout: post
-title: host ng-deep
+title: :host ::ng-deep
 date: 2022-02-28 16:06:23 +0800
 category: Angular
 ---
 
-https://stackblitz.com/edit/angular-ivy-6jnq9h?embed=1&file=src/app/app.component.ts
+<iframe src="https://stackblitz.com/edit/angular-ivy-6jnq9h?embed=1&file=src/app/app.component.ts"></iframe>
+
 ### :host
 
 ### ::ng-deep
