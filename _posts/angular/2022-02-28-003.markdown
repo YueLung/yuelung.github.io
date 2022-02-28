@@ -25,7 +25,7 @@ category: Angular
 <div [style]="{color: 'blue', border: '1px solid red'}">Some text</div>
 ```
 #### 改變css變數
-```
+```html
 .special { background-color: var(--color); }
 <div [style.--color]="'blue'" class="special">Some text.</div>
 ```
