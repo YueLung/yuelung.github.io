@@ -4,7 +4,26 @@ title: Attribute binding
 date: 2022-03-01 22:06:23 +0800
 category: Angular
 ---
-### host
-
-### ng-deep
-
+### Attribute
+```html
+<tr><td [attr.colspan]="1 + 1">One-Two</td></tr>
+```
+<br>
+### 單個Class
+```html
+<div [class.special]="isSpecial">Some text.</div>
+<!-- isSpecial是一個布林型態的變數 -->
+```
+<br>
+### 多個Class
+```html
+<div [class]="class-1 class-2 class-3">Some text.</div>
+<div [class]="{class-1: true class-2: false class-3: true"}>Some text.</div>
+```
+<br>
+### Style
+```html
+<div [style.color]="'red'">Some text.</div>
+<div [style]="'color: blue'">Some text</div>
+<div [style]="{color: 'blue', border: '1px solid red'}">Some text</div>
+```
