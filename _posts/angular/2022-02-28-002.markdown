@@ -4,5 +4,7 @@ title: host ng-deep
 date: 2022-02-28 22:06:23 +0800
 category: Angular
 ---
-https://stackblitz.com/edit/angular-ivy-pcd9cz?embed=1&file=src/app/app.component.ts
+### host
+
+### ng-deep
 
