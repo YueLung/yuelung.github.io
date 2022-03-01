@@ -1,13 +1,16 @@
 ---
 layout: post
 title: :host ::ng-deep
-date: 2022-02-28 21:51:23 +0800
+date: 2022-03-01 21:51:23 +0800
 category: Angular
 ---
 ### :host
-<iframe style="width: 100%;height:400px" src="https://stackblitz.com/edit/angular-ivy-6jnq9h?embed=1&file=src/app/hello.component.ts"></iframe>
+[source code](https://stackblitz.com/edit/angular-ivy-6jnq9h?file=src/app/app.component.ts)  
+![alt text](/public/img/angular/002-host-01.PNG)
 
 
 ### ::ng-deep
-<iframe style="width: 100%;height:400px" src="https://stackblitz.com/edit/angular-ivy-sth6tf?embed=1&file=src/app/app.component.ts"></iframe>
+[source code](https://stackblitz.com/edit/angular-ivy-sth6tf?file=src/app/app.component.ts)  
+![alt text](/public/img/angular/002-ngdeep-01.PNG)
+
 
