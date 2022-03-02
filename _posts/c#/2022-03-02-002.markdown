@@ -1,0 +1,63 @@
+---
+layout: post
+title: AutoMapper amd Dapper 
+date: 2022-03-02 21:40:23 +0800
+category: C#
+---
+## AutoMapper
+> 用途: 方便後端Model轉換要給前端的ViewModel，Property可以不用一個一個輸入。
+需至 NuGet 安裝 AutoMapper。
+model: 
+```c#
+public class ViewModel {
+    public string Id { get; set; }
+    public string Name { get; set; }
+}
+
+public class SourceModel {
+    public string Id { get; set; }
+    public string Prod { get; set; }
+}
+``` 
+use: 
+```c#
+// 設定要mapping的Property，如果名稱一樣，就不需要設定了
+var config = new MapperConfiguration(cfg =>
+    cfg.CreateMap<SourceModel, ViewModel>()
+    .ForMember(x => x.Name, y => y.MapFrom(o => o.Prod)));
+
+// 來源資料	
+var src = new List<SourceModel>() {
+    new SourceModel() {
+        Id = "123",
+        Prod = "飲料"
+    },
+    new SourceModel() {
+        Id = "12345",
+        Prod = "漢堡"
+    }};	
+	
+var mapper = config.CreateMapper();
+IEnumerable<ViewModel> result = mapper.Map<IEnumerable<ViewModel>>(src);	
+
+foreach (var item in result) {
+	Console.WriteLine(item.Id);
+	Console.WriteLine(item.Name);
+}
+
+// output
+123
+飲料
+12345
+漢堡
+```
+<br>
+## Dapper
+    
+
+    
+	
+
+
+
+
