@@ -5,7 +5,8 @@ date: 2022-03-02 21:40:23 +0800
 category: C#
 ---
 ## AutoMapper
-> 用途: 方便後端Model轉換要給前端的ViewModel，Property可以不用一個一個輸入。
+> 用途: 方便後端Model轉換要給前端的ViewModel，Property可以不用一個一個輸入    
+    
 需至 NuGet 安裝 AutoMapper。
 model: 
 ```c#
