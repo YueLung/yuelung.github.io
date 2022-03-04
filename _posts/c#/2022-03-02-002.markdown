@@ -1,6 +1,6 @@
 ---
 layout: post
-title: AutoMapper amd Dapper 
+title: AutoMapper and Dapper 
 date: 2022-03-02 21:40:23 +0800
 category: C#
 ---
