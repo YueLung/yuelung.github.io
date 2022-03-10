@@ -1,0 +1,32 @@
+---
+layout: post
+title: rxjs 呼叫多次API Observable處理問題
+date: 2022-03-01 21:44:23 +0800
+category: Typescript
+---
+### 情境一
+先第一次呼叫API先取得資料1，然後根據取得的資料1，再呼叫一次API去取得資料2
+```typescript
+this.http.get('...').pipe(
+    mergeMap((value)=>{
+       return this.http.get('..../'+value);
+   })
+)
+```
+<br>
+### 情境二
+一次呼叫3個不同api。當所有 observables 完成時，發出每個 observable 的最新值
+```typescript
+forkJoin(
+   api1,
+   api2, 
+   api3
+).subscribe((value)=>{
+  //  value[0] from api1
+  //  value[1] from api2
+  //  value[2] from api3
+})
+```
+
+
+
