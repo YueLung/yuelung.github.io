@@ -44,6 +44,7 @@ mapped.Name = Model.Model2?.Model3?.Model4?.Name ?? "N/A";
 public class Student
 {  
     public void test() { } 
+	public string test2() { return "test2"; }
 }
 
 Student student= null;		
@@ -51,8 +52,10 @@ student.test();
 // error: Object reference not set to an instance of an object.
 
 Student student= null;		
-student?.test();
-// nothing happen. 不會去call test() function
+student?.test();  // nothing happen. 不會去call test() function
+string? str = student?.test();
+if (str == null)    Console.Write("str == null"); // output: str == null
+
 ```
     
 ### Nullable type的語法糖
