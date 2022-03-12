@@ -1,0 +1,48 @@
+---
+layout: post
+title: 基本用法
+date: 2022-03-12 21:36:23 +0800
+category: Typescript
+---
+### tuple
+```typescript
+let point: [number, number, number];
+point = [1, 2, 3];
+
+let point: [number, number, number?];
+point = [1, 2];
+```
+<br>
+### union types
+```typescript
+let color: number | string;
+color = "red";
+color = 0xff0000;
+```
+```typescript
+let gender: "female" | "male";
+gender = "female"
+gender = "girl" // error
+
+let dice: 1 | 2 | 3 | 4 | 5 | 6;
+dice = 3;
+dice = 99; // error
+```
+<br>
+### function types
+```typescript
+function getUserName(callback: (data: string) => void) { 
+    callback("test");
+}
+getUserName((data) => { console.log(data) });
+getUserName((data) => { console.log(data * 2) }); // error data type is string
+```
+<br>
+### type alias
+```typescript
+// 可避免程式碼重複
+type UserId = string | number;
+function getUserInfo(userId: UserId) {
+    // ...
+}
+```
