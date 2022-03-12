@@ -1,6 +1,6 @@
 ---
 layout: post
-title: rxjs mergeMAP,switchMap 
+title: rxjs mergeMAP, switchMap 
 date: 2022-03-12 14:00:23 +0800
 category: Typescript
 ---
