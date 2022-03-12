@@ -1,0 +1,68 @@
+---
+layout: post
+title: rxjs mergeMAP switchMap 
+date: 2022-03-12 14:00:23 +0800
+category: Typescript
+---
+### mergeMAP
+
+```typescript
+const { interval } = rxjs;
+const { take, map, mergeMap, switchMap } = rxjs.operators;
+
+interval(300).pipe(map(x => "[0]" + x), take(2), 
+    mergeMap(val => 
+        interval(500).pipe(take(1), map(x =>  val + "[1]" + x)))
+).subscribe(x=> console.log(x));
+
+// output
+// after 800ms
+[0]0[1]0
+// after 300ms
+[0]1[1]0
+```
+![alt text](/public/img/typescript/003-mergeMap-01.PNG)
+```typescript
+interval(300).pipe(map(x => "[0]" + x), take(2), 
+    mergeMap(val => 
+        interval(700).pipe(take(1), map(x =>  val + "[1]" + x)))
+).subscribe(x=> console.log(x));
+
+// output
+// after 1000ms
+[0]0[1]0
+// after 300ms
+[0]1[1]0
+```
+![alt text](/public/img/typescript/003-mergeMap-02.PNG)
+<br>
+### switchMap
+
+```typescript
+interval(500).pipe(map(x => "[0]" + x), take(2), 
+    switchMap(val => 
+        interval(400).pipe(take(1), map(x =>  val + "[1]" + x)))
+).subscribe(x=> console.log(x));
+
+// output
+// after 900ms
+[0]0[1]0
+// after 500ms
+[0]1[1]0
+```
+![alt text](/public/img/typescript/003-switchMap-01.PNG)
+```typescript
+interval(500).pipe(map(x => "[0]" + x), take(2), 
+    switchMap(val => 
+        interval(700).pipe(take(1), map(x =>  val + "[1]" + x)))
+).subscribe(x=> console.log(x));
+
+// output
+// after 1000ms
+[0]1[1]0
+```
+![alt text](/public/img/typescript/003-switchMap-02.PNG)
+
+
+
+

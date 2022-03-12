@@ -15,7 +15,7 @@ this.http.get('...').pipe(
 ```
 <br>
 ### 情境二
-一次呼叫3個不同api。當所有 observables 完成時，發出每個 observable 的最新值
+一次呼叫3個不同api，當所有 observables 完成時，發出每個 observable 的最新值
 ```typescript
 forkJoin(
    api1,
