@@ -1,0 +1,14 @@
+---
+layout: post
+title: nameof, typeof 
+date: 2022-03-14 21:21:23 +0800
+category: C#
+---
+## 比較
+```c#
+Console.WriteLine(nameof(List<int>));
+Console.WriteLine(typeof(List<int>));
+// output
+List
+System.Collections.Generic.List`1[System.Int32]
+``` 
