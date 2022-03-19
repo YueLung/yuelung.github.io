@@ -1,0 +1,12 @@
+---
+layout: post
+title: 在.netcore裡，讀取UNC路徑的檔案，沒有權限問題
+date: 2022-03-19 12:53:23 +0800
+category: Other
+---
+在FileStream建構子裡加入第三個參數，FileAccess.Read
+```c#
+using (FileStream myFileStream = new FileStream(GetTestsParametersFilePath(), FileMode.Open, FileAccess.Read))
+```
+
+
