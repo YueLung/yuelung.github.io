@@ -1,13 +1,12 @@
 ---
 layout: post
-title: linear Regression
+title: Linear Regression
 date: 2022-04-04 23:30:23 +0800
-category: 機器學習
+category: Machine Learning
 ---
 ### linear Regression
-線性迴歸（linear regression）是在資料點中找出規律、畫出一條直線的專業說法
+Linear Regression is a supervised machine learning algorithm where the predicted output is continuous and has a constant slope. It’s used to predict values within a continuous range, (e.g. sales, price) 
 ![alt text](/public/img/機器學習/001-linearRegression-001.PNG)
-> y = xw + b
 <br>
 ### Cost Function 
 Let’s use MSE,(Mean-Square Error,均方誤差)
@@ -21,7 +20,7 @@ To minimize MSE we use Gradient Descent to calculate the gradient of our cost fu
 using the derivative of the cost function to find the gradient (The slope of the cost function using our current weight), and then changing our weight to move in the direction opposite of the gradient.
 ![alt text](/public/img/機器學習/001-linearRegression-004.PNG)
 
-### 
+### 實作
 ```c++
 #include <iostream>
 #include <vector>
@@ -103,4 +102,4 @@ x0 = 39.3 x1 = 1 actVal = 10.4 cal = 16.7408
 x0 = 45.9 x1 = 1 actVal = 18.3 cal = 18.6998
 x0 = 41.3 x1 = 1 actVal = 18.5 cal = 17.3345
 ```
->y = 0.296816*x + 5.07598
+> y = 0.296816*x + 5.07598
