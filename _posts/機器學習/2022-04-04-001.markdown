@@ -2,7 +2,7 @@
 layout: post
 title: Linear Regression
 date: 2022-04-04 23:30:23 +0800
-category: Machine Learning
+category: 機器學習
 ---
 ### linear Regression
 Linear Regression is a supervised machine learning algorithm where the predicted output is continuous and has a constant slope. It’s used to predict values within a continuous range, (e.g. sales, price) 
@@ -11,14 +11,18 @@ Linear Regression is a supervised machine learning algorithm where the predicted
 ### Cost Function 
 Let’s use MSE,(Mean-Square Error,均方誤差)
 ![alt text](/public/img/機器學習/001-linearRegression-002.PNG)
-> N is the total number of observations (data points)
+> N is the total number of observations (data points)   
+
 > yi is the actual value of an observation and mxi+b is our prediction
     
 <br>
 ### Gradient descent
 To minimize MSE we use Gradient Descent to calculate the gradient of our cost function. 
 ![alt text](/public/img/機器學習/001-linearRegression-003.PNG)
-using the derivative of the cost function to find the gradient (The slope of the cost function using our current weight), and then changing our weight to move in the direction opposite of the gradient.
+<br>
+using the derivative of the cost function to find the gradient 
+(The slope of the cost function using our current weight), 
+and then changing our weight to move in the direction opposite of the gradient.
 ![alt text](/public/img/機器學習/001-linearRegression-004.PNG)
 
 ### 實作

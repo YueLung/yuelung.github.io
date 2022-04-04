@@ -21,6 +21,7 @@ public Interface IRole {
 ```
 
 > 新增需要的角色，並實作該角色action
+
 > 若以後需要增角色，只需要增加class，就不會動到原本的程式碼
 
 ```c#
