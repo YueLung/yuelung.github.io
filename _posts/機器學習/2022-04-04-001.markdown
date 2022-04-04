@@ -2,7 +2,7 @@
 layout: post
 title: Linear Regression
 date: 2022-04-04 23:30:23 +0800
-category: 機器學習
+category: ML
 ---
 ### linear Regression
 Linear Regression is a supervised machine learning algorithm where the predicted output is continuous and has a constant slope. It’s used to predict values within a continuous range, (e.g. sales, price) 
