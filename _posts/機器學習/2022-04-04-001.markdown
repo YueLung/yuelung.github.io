@@ -112,14 +112,13 @@ x0 = 41.3 x1 = 1 actVal = 18.5 cal = 17.3345
 <br>
 ```python
 import matplotlib.pyplot as plt
+import numpy as np
 
 def cal_cost(x, w, y):
     data_count = len(x)
     total_cost = 0.0
     for i in range(data_count):
-        pred_y = 0.0
-        for j in range(len(x[0])):
-            pred_y += x[i][j] * w[j]
+        pred_y = np.dot(x[i], w)
         total_cost += (y[i] - pred_y) ** 2 
     return total_cost / data_count  
 
@@ -130,9 +129,7 @@ def update_weights(x, w, y):
     deriv_cost = [0] * data_count
     for i in range(data_count):
         for j in range(w_count):
-            pred_y = 0.0
-            for k in range(len(x[0])):
-                pred_y += x[i][k] * w[k]
+            pred_y = np.dot(x[i], w)
         deriv_cost[j] += (y[i] - pred_y) * -1 * x[i][j]
     for it in deriv_cost:
         it /= data_count
@@ -151,13 +148,14 @@ def tran(episode, cost_arr):
     for i in range(episode):
         update_weights(x, w, y) 
         cost_arr.append(cal_cost(x, w, y))
-    print(w)
+    print('w =', w)
+ 
 
 cost_arr = []
 tran(3000, cost_arr)
 plt.title('Error Rate')
 plt.xlabel('episode')
 plt.ylabel('Loss')
-plt.plot(cost_arr)    
+plt.plot(cost_arr)       
 ```
 ![alt text](/public/img/機器學習/001-linearRegression-005.PNG)
