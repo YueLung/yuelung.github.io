@@ -12,9 +12,9 @@ Linear Regression is a supervised machine learning algorithm where the predicted
 Let’s use MSE(Mean-Square Error,均方誤差).
 <br>
 ![alt text](/public/img/機器學習/001-linearRegression-002.PNG)
-> N is the total number of observations (data points).  
-> yi is the actual value of an observation and mxi+b is our prediction.
-    
+> N is the total number of observations (data points)      
+> yi is the actual value of an observation and mxi+b is our prediction    
+ 
 <br>
 ### Gradient descent
 To minimize MSE we use Gradient Descent to calculate the gradient of our cost function. 
@@ -107,4 +107,57 @@ x0 = 39.3 x1 = 1 actVal = 10.4 cal = 16.7408
 x0 = 45.9 x1 = 1 actVal = 18.3 cal = 18.6998
 x0 = 41.3 x1 = 1 actVal = 18.5 cal = 17.3345
 ```
-> y = 0.296816*x + 5.07598
+> y = 0.296816*x + 5.07598    
+
+<br>
+```python
+import matplotlib.pyplot as plt
+
+def cal_cost(x, w, y):
+    data_count = len(x)
+    total_cost = 0.0
+    for i in range(data_count):
+        pred_y = 0.0
+        for j in range(len(x[0])):
+            pred_y += x[i][j] * w[j]
+        total_cost += (y[i] - pred_y) ** 2 
+    return total_cost / data_count  
+
+def update_weights(x, w, y):
+    learning_rate = 0.00001;
+    data_count = len(x)
+    w_count = len(w)
+    deriv_cost = [0] * data_count
+    for i in range(data_count):
+        for j in range(w_count):
+            pred_y = 0.0
+            for k in range(len(x[0])):
+                pred_y += x[i][k] * w[k]
+        deriv_cost[j] += (y[i] - pred_y) * -1 * x[i][j]
+    for it in deriv_cost:
+        it /= data_count
+    for i in range(w_count): 
+        w[i] = w[i] - learning_rate * deriv_cost[j];
+    
+def tran(episode, cost_arr):
+    x = [[37.8, 1],
+         [39.3, 1],
+         [45.9, 1],
+         [41.3, 1]]
+    y = [22.1,10.4,18.3,18.5]
+    w = [0.01,10]
+   
+    data_len = len(x)
+    for i in range(episode):
+        update_weights(x, w, y) 
+        cost_arr.append(cal_cost(x, w, y))
+    print(w)
+
+cost_arr = []
+tran(3000, cost_arr)
+plt.title('Error Rate')
+plt.xlabel('episode')
+plt.ylabel('Loss')
+plt.plot(cost_arr)    
+```
+![alt text](/public/img/機器學習/001-linearRegression-005.PNG)
