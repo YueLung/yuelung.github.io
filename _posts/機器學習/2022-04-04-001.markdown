@@ -33,7 +33,7 @@ and then changing our weight to move in the direction opposite of the gradient.
 
 int main()
 {
-    double learnRate = 0.0001;
+    double learnRate = 0.00001;
     std::vector<std::vector<double>> x = 
     {
         {37.8, 1},
@@ -42,7 +42,7 @@ int main()
         {41.3, 1},
     };
     std::vector<double> y = {22.1,10.4,18.3,18.5}; 
-    std::vector<double> w = {0.01,5}; 
+    std::vector<double> w = {0.01,10}; 
 
     for (int i = 0; i < 3000; ++i)
     {
@@ -72,8 +72,9 @@ int main()
                 int sum = 0;
                 for (int a = 0; a < x[0].size() ;++a)
                     sum += x[j][a] * w[a];  
-                totalCost += pow((y[j] - sum), 2) / x[0].size();
+                totalCost += pow((y[j] - sum), 2) ; 
             }
+            totalCost /= x.size();   
             std::cout << "episode = "<< i <<" cost = " << totalCost;
             for (int i = 0; i < w.size(); ++i)
                 std::cout << " w" << i << " = "<< w[i];
@@ -97,18 +98,16 @@ int main()
 }
 
 output:
-episode = 0 cost = 78 w0 = 0.205876 w1 = 5.00477
-episode = 1000 cost = 34 w0 = 0.297928 w1 = 5.03006
-episode = 2000 cost = 34 w0 = 0.297371 w1 = 5.05306
-w0 = 0.296816
-w1 = 5.07598
-x0 = 37.8 x1 = 1 actVal = 22.1 cal = 16.2956
-x0 = 39.3 x1 = 1 actVal = 10.4 cal = 16.7408
-x0 = 45.9 x1 = 1 actVal = 18.3 cal = 18.6998
-x0 = 41.3 x1 = 1 actVal = 18.5 cal = 17.3345
+episode = 0 cost = 71 w0 = 0.0213726 w1 = 10.0003
+episode = 1000 cost = 17 w0 = 0.177466 w1 = 10.0053
+episode = 2000 cost = 17 w0 = 0.177437 w1 = 10.0065
+w0 = 0.177408
+w1 = 10.0077
+x0 = 37.8 x1 = 1 actVal = 22.1 cal = 16.7137
+x0 = 39.3 x1 = 1 actVal = 10.4 cal = 16.9798
+x0 = 45.9 x1 = 1 actVal = 18.3 cal = 18.1507
+x0 = 41.3 x1 = 1 actVal = 18.5 cal = 17.3346
 ```
-> y = 0.296816*x + 5.07598    
-
 <br>
 ```python
 import matplotlib.pyplot as plt
@@ -126,25 +125,25 @@ def update_weights(x, w, y):
     learning_rate = 0.00001;
     data_count = len(x)
     w_count = len(w)
-    deriv_cost = [0] * data_count
+    deriv_cost = [0] * w_count
     for i in range(data_count):
         for j in range(w_count):
             pred_y = np.dot(x[i], w)
-        deriv_cost[j] += (y[i] - pred_y) * -1 * x[i][j]
+            deriv_cost[j] += (y[i] - pred_y) * -1 * x[i][j]
     for it in deriv_cost:
         it /= data_count
     for i in range(w_count): 
-        w[i] = w[i] - learning_rate * deriv_cost[j];
+        w[i] = w[i] - learning_rate * deriv_cost[i];
     
 def tran(episode, cost_arr):
+
     x = [[37.8, 1],
          [39.3, 1],
          [45.9, 1],
          [41.3, 1]]
     y = [22.1,10.4,18.3,18.5]
     w = [0.01,10]
-   
-    data_len = len(x)
+    
     for i in range(episode):
         update_weights(x, w, y) 
         cost_arr.append(cal_cost(x, w, y))
@@ -152,10 +151,10 @@ def tran(episode, cost_arr):
  
 
 cost_arr = []
-tran(3000, cost_arr)
+tran(5000, cost_arr)
 plt.title('Error Rate')
 plt.xlabel('episode')
 plt.ylabel('Loss')
-plt.plot(cost_arr)       
+plt.plot(cost_arr)      
 ```
 ![alt text](/public/img/機器學習/001-linearRegression-005.PNG)
