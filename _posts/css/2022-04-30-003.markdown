@@ -1,0 +1,122 @@
+---
+layout: post
+title: colgroup
+date: 2022-04-30 20:23:23 +0800
+category: CSS
+---
+colgroup 用法
+```html
+<table>
+  <colgroup>
+    <col style="background-color:red">
+    <col style="background-color:yellow">
+    <col style="background-color:white">
+    <col style="background-color:green">
+  </colgroup>
+  <tr>
+    <th colspan="2">1</th>
+    <th rowspan="2">2</th>
+    <th rowspan="2">3</th>
+  </tr>
+   <tr>
+    <th>1-1</th>
+    <th>1-2</th>
+  </tr>
+  <tr>
+    <td>11111</td>
+    <td>22222</td>
+    <td>33333</td>
+    <td>44444</td>
+  </tr>
+</table>
+```
+result:
+<style>
+table, th, td {
+   border: 2px solid black;
+  border-collapse: collapse;
+}
+</style>
+<table>
+  <colgroup>
+    <col style="background-color:red">
+    <col style="background-color:yellow">
+    <col style="background-color:white">
+    <col style="background-color:green">
+  </colgroup>
+  <tr>
+    <th colspan="2">1</th>
+    <th rowspan="2">2</th>
+    <th rowspan="2">3</th>
+  </tr>
+   <tr>
+    <th>1-1</th>
+    <th>1-2</th>
+  </tr>
+  <tr>
+    <td>11111</td>
+    <td>22222</td>
+    <td>33333</td>
+    <td>44444</td>
+  </tr>
+</table>
+   
+<br>    
+   	
+colgroup 增加span屬性
+```html
+<table>
+  <colgroup>
+    <col style="background-color:red">
+    <col style="background-color:yellow">
+    <col span="2" style="background-color:green">
+  </colgroup>
+  <tr>
+    <th colspan="2">1</th>
+    <th rowspan="2">2</th>
+    <th rowspan="2">3</th>
+  </tr>
+   <tr>
+    <th>1-1</th>
+    <th>1-2</th>
+  </tr>
+  <tr>
+    <td>11111</td>
+    <td>22222</td>
+    <td>33333</td>
+    <td>44444</td>
+  </tr>
+</table>
+```
+result:
+<style>
+table, th, td {
+   border: 2px solid black;
+  border-collapse: collapse;
+}
+</style>
+
+<table>
+  <colgroup>
+    <col style="background-color:red">
+    <col style="background-color:yellow">
+    <col span="2" style="background-color:green">
+  </colgroup>
+  <tr>
+    <th colspan="2">1</th>
+    <th rowspan="2">2</th>
+    <th rowspan="2">3</th>
+  </tr>
+   <tr>
+    <th>1-1</th>
+    <th>1-2</th>
+  </tr>
+  <tr>
+    <td>11111</td>
+    <td>22222</td>
+    <td>33333</td>
+    <td>44444</td>
+  </tr>
+</table>
+
+
