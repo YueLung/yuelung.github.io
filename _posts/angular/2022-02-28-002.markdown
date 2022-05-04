@@ -4,13 +4,15 @@ title: :host ::ng-deep
 date: 2022-03-01 21:51:23 +0800
 category: Angular
 ---
-### :host
-[source code](https://stackblitz.com/edit/angular-ivy-6jnq9h?file=src/app/app.component.ts)  
-![alt text](/public/img/angular/002-host-01.PNG)
+![alt text](/public/img/angular/002-01.PNG)
 
+angular會將component自動放上一個屬性，來做樣式隔離。
+如圖，hello這個component會被放上了 _nghost-npt-c90 屬性，
+然後component內的html會被放上了 _ngcontent-npt-c90 屬性。
 
-### ::ng-deep
-[source code](https://stackblitz.com/edit/angular-ivy-sth6tf?file=src/app/app.component.ts)  
-![alt text](/public/img/angular/002-ngdeep-01.PNG)
+在style裡，會被自動放上_ngcontent-npt-c90屬性，來實現樣式隔離。
+使用:host，會在屬性選擇器加上_nghost-npt-c90。
+使用::ng-deep，會消除::ng-deep後面class的_ngcontent-npt-c90屬性。(會造成樣式全域設定，需小心使用)
+
 
 
