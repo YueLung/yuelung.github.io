@@ -6,13 +6,13 @@ category: Angular
 ---
 ![alt text](/public/img/angular/002-01.PNG)
 
-angular會將component自動放上一個屬性，來做樣式隔離。
-如圖，hello這個component會被放上了 _nghost-npt-c90 屬性，
-然後component內的html會被放上了 _ngcontent-npt-c90 屬性。
-
-在style裡，會被自動放上_ngcontent-npt-c90屬性，來實現樣式隔離。
-使用:host，會在屬性選擇器加上_nghost-npt-c90。
-使用::ng-deep，會消除::ng-deep後面class的_ngcontent-npt-c90屬性。(會造成樣式全域設定，需小心使用)
+angular會將component自動放上一個屬性,來做樣式隔離<br>
+如圖,hello這個component會被放上了 _nghost-npt-c90 屬性<br>
+然後component內的html會被放上了 _ngcontent-npt-c90 屬性<br>
+<br>
+在style裡,會被自動放上_ngcontent-npt-c90屬性,來實現樣式隔離<br>
+使用:host,會在屬性選擇器加上_nghost-npt-c90<br>
+使用::ng-deep,會消除::ng-deep後面class的_ngcontent-npt-c90屬性.(會造成樣式全域設定,需小心使用)<br>
 
 
 
