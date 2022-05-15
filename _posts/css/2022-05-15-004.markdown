@@ -1,0 +1,28 @@
+---
+layout: post
+title: scss 自動產生大量的class
+date: 2022-05-15 17:23:23 +0800
+category: CSS
+---
+SCSS是個能用更有效率的方法來編寫CSS的程式語言.<br>
+```scss
+$dirs: ('right', 'left', 'top', 'bottom');
+$values: (2px, 4px, 6px, 8px, 10px);
+
+@for $i from 1 through length($dirs) {
+  @for $j from 1 through length($values) {
+    .margin-#{nth($dirs, $i)}-#{$j}x {
+      margin-#{nth($dirs, $i)}: nth($values, $j);
+    }
+    .padding-#{nth($dirs, $i)}-#{$j}x {
+      padding-#{nth($dirs, $i)}: nth($values, $j);
+    }
+  }
+}
+```
+使用:<br>
+```html
+<div class="margin-right-2x"></div>
+```
+
+
