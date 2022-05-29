@@ -7,4 +7,4 @@ permalink: /about/
 
 - [github](https://github.com/YueLung){:target="_blank"}  
 - [codepen](https://codepen.io/yuelung){:target="_blank"}
-- [angular-demo](https://safe-scrubland-35485.herokuapp.com/){:target="_blank"} 
+- [angular-demo](https://yuelung-ng-demo.herokuapp.com){:target="_blank"} 
