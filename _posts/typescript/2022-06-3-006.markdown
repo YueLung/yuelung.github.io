@@ -1,0 +1,101 @@
+---
+layout: post
+title: Deep copy
+date: 2022-06-03 14:59:23 +0800
+category: Typescript
+---
+### Shallow copy
+複製到同一個參考位址（共用同一個記憶體位址）
+```typescript
+interface Person {
+    age:number;
+    name:string;
+}
+
+let person1 = { age:10,name:'james' } as Person;
+let person2 = person1;
+person2.age =15;
+
+console.log('p1', person1.age);
+console.log('p2', person2.age);
+// output
+// "p1",  15 
+// "p2",  15
+```
+Function 的參數在傳值時也是 Shallow copy 
+```typescript
+interface Person {
+    age:number;
+    name:string;
+}
+
+function test(p: Person){
+    p.age = 120;
+}
+
+let person1 = { age:10, name:'james' } as Person;
+test(person1);
+
+console.log(person1.age);
+// output
+// 120
+```
+### Spread operator {...obj}
+複製整個值包含至深層，存進獨立的記憶體位置，不影響本來的參考。
+```typescript
+interface Person {
+    age:number;
+    name:string;
+}
+
+let person1 = { age:10,name:'james' } as Person;
+let person2 = {...person1};
+person2.age =15;
+
+console.log('p1', person1.age);
+console.log('p2', person2.age);
+// output
+// "p1",  10 
+// "p2",  15
+```
+但只能拷貝到物件第一層
+```typescript
+interface Person {
+    age:number;
+    name:string;
+    option:{ value:string }
+}
+
+let person1 = { age:10, name:'james', option: { value:'test1' }  } as Person;
+let person2 = {...person1};
+person2.age = 15;
+person2.option.value ='test2';
+
+console.log('p1=>', person1.age, person1.option.value);
+console.log('p2=>', person2.age, person2.option.value);
+// output
+// "p1=>",  10,  "test2" 
+// "p2=>",  15,  "test2" 
+```
+### JSON.stringify() / JSON.parse()
+先轉成字串，再轉回原本的物件
+可拷貝至深層
+```typescript
+interface Person {
+    age:number;
+    name:string;
+    option:{ value:string }
+}
+
+let person1 = { age:10, name:'james', option: { value:'test1' }  } as Person;
+let person2 = JSON.parse(JSON.stringify(person1));
+person2.age = 15;
+person2.option.value ='test2';
+
+console.log('p1=>', person1.age, person1.option.value);
+console.log('p2=>', person2.age, person2.option.value);
+// output
+// "p1=>",  10,  "test1" 
+// "p2=>",  15,  "test2" 
+```
+
