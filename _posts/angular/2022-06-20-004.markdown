@@ -1,0 +1,14 @@
+---
+layout: post
+title: ngFor trackBy
+date: 2022-06-20 22:51:23 +0800
+category: Angular
+---
+### trackBy
+
+![alt text](/public/img/angular/004-trackby.PNG)
+
+當使用ngfor來源資料是基本型態陣列時，須增加trackBy告知Dom哪個項目被改變了，否則Dom會整個重繪，畫面會變很奇怪。
+
+
+
