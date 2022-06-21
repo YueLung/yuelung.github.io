@@ -10,5 +10,16 @@ category: Angular
 
 當使用ngfor來源資料是基本型態陣列時，須增加trackBy告知Dom哪個項目被改變了，否則Dom會整個重繪，畫面會變很奇怪。
 
+```html
+<ng-container *ngFor="let item of ary;index as i;trackBy: trackItem">
+  <input [(ngModel)]="ary[i]"/>
+</ng-container>
+```
+
+```typescript
+trackItem (index: number, item: any) {
+  return index;
+}
+```
 
 
