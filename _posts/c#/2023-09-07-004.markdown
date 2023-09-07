@@ -1,0 +1,31 @@
+---
+layout: post
+title: Value Type、Reference Type
+date: 2022-09-07 22:04:23 +0800
+category: C#
+---
+### Value Type
+
+- 基礎類型，如int、float、double、decimal...
+- struct
+- tuple
+- enum
+
+```
+實值型別。顧名思義儲存的是實體的值，也就是記憶體位址。每個實體型別宣告的變數各對應一組記憶體位址，記憶體位址存放該變數的值。
+```
+
+### Reference Type
+
+- dynamic
+- object
+- class
+- interface
+- string
+
+
+	
+
+
+
+
