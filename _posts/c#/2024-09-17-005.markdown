@@ -1,6 +1,6 @@
 ---
 layout: post
-title: boxing unboxing
+title: boxing and unboxing
 date: 2024-09-17 14:56:00 +0800
 category: C#
 ---
@@ -10,7 +10,7 @@ int i = 123;
 // The following line boxes i.
 object o = i;
 ``` 
-![alt text](/public/img/c#/005-boxing-1.gif)
+![alt text](/public/img/c#/005-boxing-1.png)
     
 ### unboxing
 ```c#
@@ -18,7 +18,7 @@ int i = 123;      // a value type
 object o = i;     // boxing
 int j = (int)o;   // unboxing
 ``` 
-![alt text](/public/img/c#/005-unboxing-1.gif)
+![alt text](/public/img/c#/005-unboxing-1.png)
 
 
 
