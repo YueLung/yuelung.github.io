@@ -4,15 +4,30 @@ title: boxing and unboxing
 date: 2024-09-17 14:56:00 +0800
 category: C#
 ---
-### boxing
+## boxing
+Boxing 發生在你想把一個value-type的物件，當成 reference type來操作的時候。等於是要在 heap 上找一塊空間，然後把 struct 身上所有的值都 copy 過去。一旦做了這件事，等於幾乎失去了 struct 所有的好處。
+    
+何時會發生 boxing ?
 ```c#
 int i = 123;
 // The following line boxes i.
 object o = i;
 ``` 
 ![alt text](/public/img/csharp/005-boxing-1.png)
-    
-### unboxing
+
+``` c#
+public static void Main()
+{
+  int v = 5;
+  Object o = v;   // 指派 v 給 o ，裝箱一次
+  v = 123;
+  Console.WriteLine(v + "," + (int)o);
+  // 強制把o變回int，會unboxing一次，接著
+  // v + "," + (int)o 背後等同呼叫String.Concat(Object, Object, Object)，所以第一個參數 v 會被 boxing，而且第三個參數 int(o)也會再被 boxing 回 Object。
+}
+```
+
+## unboxing
 ```c#
 int i = 123;      // a value type
 object o = i;     // boxing

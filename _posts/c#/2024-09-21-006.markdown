@@ -7,8 +7,8 @@ category: C#
 
 在C#中資料型別(Type)有分為兩種，Value type 和 Reference type
 
-Value type : 變數的記憶體(Stack)空間裡存放的為『內容(值)』    
-Reference type : 變數的記憶體空間(Stack)裡存放的為『Heap記憶體位址』
+* Value type : 變數的記憶體(Stack)空間裡存放的為『內容(值)』    
+* Reference type : 變數的記憶體空間(Stack)裡存放的為『Heap記憶體位址』
 
 ## Example-1
 
@@ -34,8 +34,9 @@ static void Main(string[] args)
 
 ![alt text](/public/img/csharp/006-stack_heap-1.png)
 
+***
 
-## Example-1
+## Example-2
 
 ``` c#
 public class Car
