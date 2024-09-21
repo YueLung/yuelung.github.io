@@ -1,0 +1,80 @@
+---
+layout: post
+title: Stack與Heap記憶體配置
+date: 2024-09-21 17:23:00 +0800
+category: C#
+---
+
+在C#中資料型別(Type)有分為兩種，Value type 和 Reference type
+
+Value type : 變數的記憶體(Stack)空間裡存放的為『內容(值)』    
+Reference type : 變數的記憶體空間(Stack)裡存放的為『Heap記憶體位址』
+
+## Example-1
+
+``` c#
+public class Car
+{
+    public string manufacturer;
+    public int price;
+
+    public Car(string manufacturer, int price)
+    {
+        this.manufacturer = manufacturer;
+        this.price = price;
+    }
+}
+
+static void Main(string[] args)
+{
+    int price = 20000;
+    Car testCar = new Car("Audi", price); 
+}
+```
+
+![alt text](/public/img/csharp/006-stack_heap-1.png)
+
+
+## Example-1
+
+``` c#
+public class Car
+{
+    public string manufacturer;
+    public int price;
+    public NumberOfSeatsAndDoors numberOfSeatsAndDoors;
+
+    public Car(string manufacturer, int price, NumberOfSeatsAndDoors numberOfSeatsAndDoors)
+    {
+        this.manufacturer = manufacturer;
+        this.price = price;
+        this.numberOfSeatsAndDoors = numberOfSeatsAndDoors;
+    }
+}
+
+public struct NumberOfSeatsAndDoors
+{
+    public int numSeats;
+    public int numDoors;
+
+    public NumberOfSeatsAndDoors(int numSeats, int numDoors)
+    {
+        this.numSeats = numSeats;
+        this.numDoors = numDoors;
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        NumberOfSeatsAndDoors x = new NumberOfSeatsAndDoors(5, 4);
+        Car testCar1 = new Car("Audi", 20000, x);
+        Car testCar2 = testCar1;
+    }
+}
+```
+
+![alt text](/public/img/csharp/006-stack_heap-2.png)
+
+
